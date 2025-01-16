@@ -2,7 +2,7 @@ import pyttsx3
 import datetime
 import speech_recognition as sr
 import smtplib
-from credentials import senderEmail, ePWD
+from credentials import senderEmail, ePWD, apiKey
 from email.message import EmailMessage
 import pyautogui
 import webbrowser as wb
@@ -20,7 +20,6 @@ import random
 import psutil
 from nltk.tokenize import word_tokenize
 import google.generativeai as genai
-from geminiAPI import apiKey
 
 genai.configure(api_key=apiKey)
 model = genai.GenerativeModel("gemini-1.5-flash")
@@ -160,7 +159,7 @@ def sayJokes():
 
 def screenshot():
     name_img = tt.time()
-    name_img = f'D:\\Python Projects\\J.A.R.V.I.S\\screenshot\\{name_img}.png'
+    name_img = f'screenshot\\{name_img}.png'
     img = pyautogui.screenshot(name_img)
     img.show()
 
